@@ -1551,20 +1551,20 @@ void loadSettings() {
 				else if (currentElement == L"width") {
 					width = wstring(pwszValue, cwchValue);
 					if (width.empty()) {
-						width = L"800";
+						width = L"3840";
 					}
 				}
 				else if (currentElement == L"height") {
 					height = wstring(pwszValue, cwchValue);
 					if (height.empty()) {
-						height = L"600";
+						height = L"2160";
 					}
 					resolutions.insert(make_tuple(stoi(width), stoi(height)));
 				}
 				else if (currentElement == L"refresh_rate") {
 					refreshRate = wstring(pwszValue, cwchValue);
 					if (refreshRate.empty()) {
-						refreshRate = L"30";
+						refreshRate = L"60";
 					}
 					int vsync_num, vsync_den;
 					float_to_vsync(stof(refreshRate), vsync_num, vsync_den);
@@ -1667,37 +1667,6 @@ void loadSettings() {
 	numVirtualDisplays = 1;
 	vector<tuple<int, int, int, int>> res;
 	vector<tuple<int, int, float>> fallbackRes = {
-		{800, 600, 30.0f},
-		{800, 600, 60.0f},
-		{800, 600, 90.0f},
-		{800, 600, 120.0f},
-		{800, 600, 144.0f},
-		{800, 600, 165.0f},
-		{1280, 720, 30.0f},
-		{1280, 720, 60.0f},
-		{1280, 720, 90.0f},
-		{1280, 720, 130.0f},
-		{1280, 720, 144.0f},
-		{1280, 720, 165.0f},
-		{1366, 768, 30.0f},
-		{1366, 768, 60.0f},
-		{1366, 768, 90.0f},
-		{1366, 768, 120.0f},
-		{1366, 768, 144.0f},
-		{1366, 768, 165.0f},
-		{1920, 1080, 30.0f},
-		{1920, 1080, 60.0f},
-		{1920, 1080, 90.0f},
-		{1920, 1080, 120.0f},
-		{1920, 1080, 144.0f},
-		{1920, 1080, 165.0f},
-		{2560, 1440, 30.0f},
-		{2560, 1440, 60.0f},
-		{2560, 1440, 90.0f},
-		{2560, 1440, 120.0f},
-		{2560, 1440, 144.0f},
-		{2560, 1440, 165.0f},
-		{3840, 2160, 30.0f},
 		{3840, 2160, 60.0f},
 		{3840, 2160, 90.0f},
 		{3840, 2160, 120.0f},
